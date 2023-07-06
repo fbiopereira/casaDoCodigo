@@ -2,7 +2,7 @@
 
 namespace CasaDoCodigo.Models
 {
-    public class Produto : BaseModel
+    public class Produto : ModeloBase
     {
         public Produto()
         {

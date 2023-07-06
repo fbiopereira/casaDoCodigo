@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace CasaDoCodigo.Models
 {
 
-    public class Pedido : BaseModel
+    public class Pedido : ModeloBase
     {
         public Pedido()
         {

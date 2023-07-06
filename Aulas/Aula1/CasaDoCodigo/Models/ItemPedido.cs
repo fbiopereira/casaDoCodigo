@@ -2,7 +2,7 @@
 
 namespace CasaDoCodigo.Models
 {
-    public class ItemPedido : BaseModel
+    public class ItemPedido : ModeloBase
     {
         [Required]
         public Pedido Pedido { get; private set; }

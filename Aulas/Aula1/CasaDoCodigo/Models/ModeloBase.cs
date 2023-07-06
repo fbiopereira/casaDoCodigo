@@ -3,7 +3,7 @@
 namespace CasaDoCodigo.Models
 {
     [DataContract]
-    public class BaseModel
+    public class ModeloBase
     {
         [DataMember]
         public int Id { get; protected set; }

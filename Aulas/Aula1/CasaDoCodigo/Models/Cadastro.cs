@@ -3,7 +3,7 @@
 namespace CasaDoCodigo.Models
 {
 
-    public class Cadastro : BaseModel
+    public class Cadastro : ModeloBase
     {
         public Cadastro()
         {

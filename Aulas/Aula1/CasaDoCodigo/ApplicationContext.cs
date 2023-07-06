@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CasaDoCodigo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasaDoCodigo
 {
@@ -11,6 +12,8 @@ namespace CasaDoCodigo
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Produto>().HasKey(t => t.Id);
         }
     }
     
