@@ -1,28 +1,32 @@
 ﻿using CasaDoCodigo.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace CasaDoCodigo.Repositories
 {
-    public class ProdutoRepository : IProdutoRepository
+    public class ProdutoRepository : BaseRepository<Produto>, IProdutoRepository
     {
-        private readonly ApplicationContext contexto;
-
-        public ProdutoRepository(ApplicationContext contexto)
+        public ProdutoRepository(ApplicationContext contexto) : base(contexto)
         {
-            this.contexto = contexto;
         }
 
         public IList<Produto> GetProdutos()
         {
-            return contexto.Set<Produto>().ToList<Produto>();
+            return dbSet.ToList<Produto>();
         }
 
         public void SaveProdutos(List<Produto> produtos)
         {
+
             foreach (var produto in produtos)
             {
-                contexto.Set<Produto>().Add(produto);
+                
+                if (!dbSet.Where(p => p.Codigo == produto.Codigo).Any())
+                {
+                    dbSet.Add(produto);
+                }
+                
             }
             contexto.SaveChanges();
         }
