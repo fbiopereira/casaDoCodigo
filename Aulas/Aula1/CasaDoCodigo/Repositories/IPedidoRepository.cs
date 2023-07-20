@@ -8,5 +8,6 @@ namespace CasaDoCodigo.Repositories
         void AddItem(string codigoProduto);
         Pedido GetPedido();
         UpdateQuantidadeResponse UpdateQuantidade(ItemPedido itemPedido);
+        Pedido UpdateCadastro(Cadastro cadastro);
     }
 }
